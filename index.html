@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>සුභ උපන්දිනයක් මිහිරංග! 🎂</title>
+<meta name="description" content="සනුගගෙන් මිහිරංගට උපන්දින සුබපැතුමක් 💌">
+<meta property="og:title" content="💌 මිහිරංග, ඔයාට ලියුමක් ඇවිත්!">
+<meta property="og:description" content="සනුගගෙන් උපන්දින සුබපැතුමක් - විවෘත කරලා බලන්න 🎉">
+<meta name="theme-color" content="#2b1055">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;800&family=Noto+Serif+Sinhala:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg1:#2b1055; --bg2:#7597de;
+    --env:#ff5c7a; --env-dark:#e63e5f; --env-flap:#ff7b93; --env-light:#ff8fa3;
+    --paper:#fff8ef; --ink:#4a2040; --gold:#ffc94d;
+    --env-w:min(84vw, 340px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    font-family:'Noto Sans Sinhala',sans-serif;
+    min-height:100dvh;
+    background:linear-gradient(160deg,var(--bg1) 0%,#5b2a86 45%,var(--bg2) 100%);
+    color:#fff;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+
+  /* ---------- background sparkles & balloons ---------- */
+  .stars{position:fixed;inset:0;pointer-events:none;
+    background-image:
+      radial-gradient(2px 2px at 20% 30%,#fff9 50%,transparent 51%),
+      radial-gradient(1.5px 1.5px at 70% 20%,#fff8 50%,transparent 51%),
+      radial-gradient(2px 2px at 40% 80%,#fff7 50%,transparent 51%),
+      radial-gradient(1.5px 1.5px at 85% 65%,#fff9 50%,transparent 51%),
+      radial-gradient(1px 1px at 10% 60%,#fff 50%,transparent 51%),
+      radial-gradient(1.5px 1.5px at 55% 45%,#fff6 50%,transparent 51%);
+    animation:twinkle 4s ease-in-out infinite alternate}
+  @keyframes twinkle{to{opacity:.4}}
+  .balloon{position:fixed;bottom:-120px;font-size:42px;pointer-events:none;
+    animation:rise linear infinite;opacity:.85;filter:drop-shadow(0 6px 8px #0003)}
+  .balloon:nth-child(2){left:6%;animation-duration:13s;animation-delay:0s}
+  .balloon:nth-child(3){left:78%;animation-duration:16s;animation-delay:3s;font-size:34px}
+  .balloon:nth-child(4){left:45%;animation-duration:19s;animation-delay:7s;font-size:30px}
+  .balloon:nth-child(5){left:22%;animation-duration:15s;animation-delay:10s;font-size:38px}
+  .balloon:nth-child(6){left:90%;animation-duration:12s;animation-delay:5s;font-size:28px}
+  @keyframes rise{
+    0%{transform:translateY(0) translateX(0) rotate(-6deg)}
+    50%{transform:translateY(-60vh) translateX(18px) rotate(6deg)}
+    100%{transform:translateY(-125vh) translateX(-10px) rotate(-6deg)}
+  }
+
+  /* ---------- envelope scene ---------- */
+  .scene{display:flex;flex-direction:column;align-items:center;gap:34px;
+    perspective:1000px;transition:opacity .6s ease, transform .6s ease;z-index:2}
+  .scene.hide{opacity:0;transform:scale(.85) translateY(40px);pointer-events:none}
+
+  .to{font-family:'Noto Serif Sinhala',serif;font-size:clamp(20px,5.5vw,26px);
+    text-align:center;line-height:1.6;text-shadow:0 2px 12px #0005}
+  .to small{display:block;font-family:'Noto Sans Sinhala';font-size:.6em;opacity:.8;font-weight:400}
+
+  .envelope-wrap{animation:float 4s ease-in-out infinite;transform-style:preserve-3d}
+  .scene.opened .envelope-wrap{animation:none;transform:rotateX(8deg)}
+  @keyframes float{
+    0%,100%{transform:rotateX(14deg) rotateY(-12deg) translateY(0)}
+    50%{transform:rotateX(6deg) rotateY(12deg) translateY(-14px)}
+  }
+
+  .envelope{position:relative;width:var(--env-w);aspect-ratio:1.55;cursor:pointer;
+    transform-style:preserve-3d;transition:transform .3s}
+  .envelope:active{transform:scale(.97)}
+  .envelope::after{ /* floor shadow */
+    content:"";position:absolute;left:8%;right:8%;bottom:-34px;height:20px;
+    background:radial-gradient(ellipse,#0006,transparent 70%);transform:translateZ(-40px)}
+
+  .env-back{position:absolute;inset:0;background:var(--env-dark);border-radius:10px;
+    box-shadow:0 20px 40px #0004}
+
+  .letter{position:absolute;left:6%;right:6%;top:6%;height:86%;
+    background:var(--paper);border-radius:8px;z-index:2;
+    color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:4px;text-align:center;box-shadow:0 4px 14px #0002;
+    transition:transform 1s cubic-bezier(.2,.8,.3,1.2) .55s;
+    background-image:repeating-linear-gradient(transparent 0 22px,#f1d9c9 22px 23px)}
+  .letter .cake{font-size:clamp(30px,9vw,42px)}
+  .letter b{font-family:'Noto Serif Sinhala',serif;font-size:clamp(15px,4.4vw,19px);color:#c2185b}
+  .scene.opened .letter{transform:translateY(-62%) translateZ(10px)}
+
+  .env-front{position:absolute;inset:0;z-index:3;border-radius:0 0 10px 10px;
+    background:linear-gradient(180deg,var(--env-light),var(--env));
+    clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%)}
+  .env-front::before{ /* side folds shading */
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(to top right,#0000 49.5%,#00000014 50%) left/50% 100% no-repeat,
+      linear-gradient(to top left,#0000 49.5%,#00000014 50%) right/50% 100% no-repeat}
+
+  .flap{position:absolute;top:0;left:0;width:100%;height:62%;z-index:4;
+    background:linear-gradient(180deg,var(--env-flap),#ff6684);
+    clip-path:polygon(0 0,100% 0,50% 100%);border-radius:10px 10px 0 0;
+    transform-origin:top center;
+    transition:transform .6s ease-in-out, z-index 0s linear .3s}
+  .scene.opened .flap{transform:rotateX(180deg);z-index:1}
+
+  .seal{position:absolute;left:50%;top:62%;width:54px;height:54px;z-index:5;
+    transform:translate(-50%,-50%);border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,#ffdd7a,var(--gold) 45%,#d99a1e);
+    display:grid;place-items:center;font-size:24px;
+    box-shadow:0 4px 10px #0004, inset 0 -3px 6px #0002;
+    animation:pulse 1.6s ease-in-out infinite;transition:opacity .3s, transform .3s}
+  .scene.opened .seal{opacity:0;transform:translate(-50%,-50%) scale(1.6);animation:none}
+  @keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.1)}}
+
+  .hint{font-size:15px;opacity:.9;display:flex;align-items:center;gap:8px;
+    background:#ffffff1f;padding:10px 18px;border-radius:999px;backdrop-filter:blur(6px);
+    border:1px solid #ffffff30;animation:bob 1.4s ease-in-out infinite}
+  .scene.opened .hint{opacity:0}
+  @keyframes bob{50%{transform:translateY(-5px)}}
+
+  /* ---------- the card ---------- */
+  .card-wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+    padding:20px;z-index:5;pointer-events:none;perspective:1200px}
+  .card{width:min(92vw,420px);max-height:88dvh;overflow-y:auto;
+    background:var(--paper);color:var(--ink);border-radius:22px;
+    padding:30px 24px 26px;text-align:center;position:relative;
+    box-shadow:0 30px 60px #0006;
+    opacity:0;transform:rotateX(-70deg) scale(.6) translateY(80px);transform-origin:bottom center;
+    transition:transform .9s cubic-bezier(.2,.9,.3,1.25), opacity .5s}
+  .card::before{content:"";position:absolute;inset:8px;border:2px dashed #f3b6c6;border-radius:16px;pointer-events:none}
+  .card-wrap.show{pointer-events:auto}
+  .card-wrap.show .card{opacity:1;transform:none}
+
+  .card .top-emoji{font-size:58px;line-height:1;display:inline-block;animation:wiggle 2s ease-in-out infinite}
+  @keyframes wiggle{25%{transform:rotate(-8deg) scale(1.05)}75%{transform:rotate(8deg) scale(1.05)}}
+  .card h1{font-family:'Noto Serif Sinhala',serif;font-weight:900;
+    font-size:clamp(24px,7vw,32px);line-height:1.5;margin-top:10px;
+    background:linear-gradient(90deg,#e91e63,#ff9800,#9c27b0);
+    -webkit-background-clip:text;background-clip:text;color:transparent}
+  .card .name{font-family:'Noto Serif Sinhala',serif;font-weight:900;
+    font-size:clamp(34px,11vw,48px);color:#c2185b;margin:2px 0 14px;
+    text-shadow:2px 3px 0 #ffd6e0}
+  .card p{font-size:16px;line-height:2;margin-bottom:12px}
+  .wishes{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:14px 0 18px}
+  .wishes span{background:#ffe4ec;color:#ad1457;font-weight:600;font-size:14px;
+    padding:6px 12px;border-radius:999px}
+  .sign{font-family:'Noto Serif Sinhala',serif;font-size:18px;margin-top:6px;color:#6a1b4d}
+  .sign strong{display:block;font-size:26px;color:#c2185b}
+  .again{margin-top:20px;border:0;font:inherit;font-weight:600;font-size:15px;
+    padding:12px 26px;border-radius:999px;color:#fff;cursor:pointer;
+    background:linear-gradient(90deg,#ff5c7a,#c2185b);box-shadow:0 8px 18px #c2185b55}
+  .again:active{transform:scale(.96)}
+
+  /* ---------- confetti ---------- */
+  .confetti{position:fixed;top:-20px;width:9px;height:14px;z-index:6;pointer-events:none;
+    border-radius:2px;animation:fall linear forwards}
+  @keyframes fall{to{transform:translateY(110vh) rotate(720deg) translateX(var(--dx))}}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.01ms!important;animation-iteration-count:1!important}
+  }
+</style>
+</head>
+<body>
+  <div class="stars"></div>
+  <span class="balloon">🎈</span>
+  <span class="balloon">🎈</span>
+  <span class="balloon">🎉</span>
+  <span class="balloon">🎈</span>
+  <span class="balloon">💖</span>
+
+  <main class="scene" id="scene">
+    <div class="to">
+      මිහිරංග, ඔයාට ලියුමක් ඇවිත්! 💌
+      <small>යවන්නා: සනුග</small>
+    </div>
+
+    <div class="envelope-wrap">
+      <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="ලියුම විවෘත කරන්න">
+        <div class="env-back"></div>
+        <div class="letter">
+          <div class="cake">🎂</div>
+          <b>සුභ උපන්දිනයක්!</b>
+        </div>
+        <div class="env-front"></div>
+        <div class="flap"></div>
+        <div class="seal">💖</div>
+      </div>
+    </div>
+
+    <div class="hint">👆 ලියුම විවෘත කරන්න ඔබන්න</div>
+  </main>
+
+  <section class="card-wrap" id="cardWrap" aria-live="polite">
+    <article class="card">
+      <div class="top-emoji">🎂</div>
+      <h1>සුභ උපන්දිනයක් වේවා!</h1>
+      <div class="name">මිහිරංග 🎉</div>
+
+      <p>ආදරණීය මිහිරංග,<br>
+      ඔයාගේ ජීවිතය හැමදාම සතුටින්, නිරෝගී සුවයෙන් සහ සාර්ථකත්වයෙන් පිරිලා තියෙන්න කියලා මම හදවතින්ම ප්‍රාර්ථනා කරනවා.</p>
+      <p>ඔයාගේ හැම හීනයක්ම ඉක්මනින් ඇත්ත වෙන්න! 🌟<br>
+      අද දවස ඔයාට හිනාවෙන් පිරුණු, කවදාවත් අමතක නොවන දවසක් වෙන්න ඕනේ. 🥳</p>
+
+      <div class="wishes">
+        <span>😊 සතුට</span><span>💪 සෞඛ්‍යය</span><span>🏆 සාර්ථකත්වය</span><span>❤️ ආදරය</span>
+      </div>
+
+      <div class="sign">ආදරයෙන්,<strong>සනුග 💝</strong></div>
+
+      <button class="again" id="again">💌 ආයෙත් බලමු</button>
+    </article>
+  </section>
+
+<script>
+  const scene = document.getElementById('scene');
+  const env = document.getElementById('envelope');
+  const cardWrap = document.getElementById('cardWrap');
+  const colors = ['#ff5c7a','#ffc94d','#7cd9ff','#b388ff','#69f0ae','#ff9800','#fff'];
+
+  function confetti(n = 110){
+    for(let i = 0; i < n; i++){
+      const c = document.createElement('div');
+      c.className = 'confetti';
+      c.style.left = Math.random() * 100 + 'vw';
+      c.style.background = colors[i % colors.length];
+      c.style.setProperty('--dx', (Math.random() * 160 - 80) + 'px');
+      c.style.animationDuration = (2.5 + Math.random() * 2.5) + 's';
+      c.style.animationDelay = (Math.random() * 0.8) + 's';
+      if(Math.random() > .6) c.style.borderRadius = '50%';
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 6500);
+    }
+  }
+
+  function openEnvelope(){
+    if(scene.classList.contains('opened')) return;
+    scene.classList.add('opened');
+    try{ navigator.vibrate && navigator.vibrate([30, 40, 30]); }catch(e){}
+    setTimeout(() => {
+      scene.classList.add('hide');
+      cardWrap.classList.add('show');
+      confetti();
+    }, 1700);
+  }
+
+  env.addEventListener('click', openEnvelope);
+  env.addEventListener('keydown', e => { if(e.key === 'Enter' || e.key === ' ') openEnvelope(); });
+
+  document.getElementById('again').addEventListener('click', () => {
+    cardWrap.classList.remove('show');
+    setTimeout(() => {
+      scene.classList.remove('hide', 'opened');
+    }, 500);
+  });
+</script>
+</body>
+</html>
